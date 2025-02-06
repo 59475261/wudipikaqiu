@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>弹出框示例</title>
+    <script>
+        // 定义弹出框次数
+        let count = 0;
+
+        // 创建一个函数来弹出框并检查是否已弹出 10 次
+        function showAlert() {
+            count++;
+            if (count <= 10) {
+                alert("这是第 " + count + " 次弹出框！");
+                showAlert(); // 递归调用自身，直到弹出 10 次
+            }
+        }
+
+        // 页面加载时自动触发弹框
+        window.onload = function() {
+            showAlert(); // 调用函数开始弹出框
+        }
+    </script>
+</head>
+<body>
+    <h1>请注意弹出的框</h1>
+    <p>这个页面会弹出十次无法关闭的警告框，直到次数达到 10 次为止。</p>
+</body>
+</html>
